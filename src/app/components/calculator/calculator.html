@@ -1,6 +1,25 @@
 <p>calculator works!</p>
 
-<input type="number" [value]="num1() || 0"  (input)="updateNum1($event)" />
-<input type="number" [value]="num2() || 0"  (input)="updateNum2($event)" />
-<p>Result: {{ result() }}</p>
-<button (click)="reset()">Reset</button>
+<div class="calculator">
+    <input type="number" [value]="num1() || 0"  (input)="updateNum1($event)" />
+    <span>+</span>
+    <input type="number" [value]="num2() || 0"  (input)="updateNum2($event)" />
+    <span>=</span>
+    <span>{{ result() }}</span>
+
+    @if(result() === 0) {
+        <p>Try to change the numbers...</p>
+    }
+    <button (click)="reset()">Reset</button>
+    <div class="examples">
+        <p>Examples:</p>
+        <ul>
+            @for(example of examples; track $index) {
+                <li>{{ example.num1 }} + {{ example.num2 }} = {{ example.result }}</li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
