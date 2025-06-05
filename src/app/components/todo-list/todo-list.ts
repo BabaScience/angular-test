@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, effect} from '@angular/core';
 import { Todos } from '../../services/todos';
 
 @Component({
@@ -11,6 +11,12 @@ export class TodoList implements OnInit {
 
   todos = inject<Todos>(Todos);
   title = signal<string>('');
+
+  constructor() {
+    effect(() => {
+      console.log(this.title());
+    })
+  }
 
   ngOnInit() {
     this.todos = inject(Todos);
