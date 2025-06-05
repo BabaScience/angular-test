@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Counter } from '../components/counter/counter';
+// import { Counter } from '../components/counter/counter';
 import { Calculator } from '../components/calculator/calculator';
+import { TodoList } from '../components/todo-list/todo-list';
 
 @Component({
   selector: 'app-home',
-  imports: [Counter, Calculator],
+  imports: [ Calculator, TodoList],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

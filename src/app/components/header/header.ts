@@ -8,5 +8,5 @@ import { signal } from '@angular/core';
   styleUrl: './header.css'
 })
 export class Header {
-  protected appName = signal('Bamba App');
+  protected appName = signal('Test App');
 }

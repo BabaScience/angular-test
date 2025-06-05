@@ -1,0 +1,14 @@
+<p>todo-list works!</p>
+<div>
+    <input type="text" (input)="onTitleChange($event)" />
+    <button (click)="addTodo()">Add</button>
+
+    <ul>
+        @for(todo of todos.getTodosList(); track todo.id) {
+            <li>
+                {{ todo.title }}
+                <button (click)="removeTodo(todo.id)">Remove</button>
+            </li>
+        }
+    </ul>
+</div>
